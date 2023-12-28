@@ -1,124 +1,131 @@
 ---
-Главная страница: |
+Функциональные тесты: |
 
-- summary: | # регистрация на сайте
-    Успешная регистрация нового пользователя на сайте по E-mail
+- summary: | # регистрация
+    Успешная регистрация нового пользователя на сайте с помощью E-mail
   requirement: |
     Пользователь имеет возможность регистрации в системе с помощью E-mail, GitHub, Discord
   prerequisites: |
     Открыта страница https://codebattle.hexlet.io/
   test-data: |
-
+    Nickname = test
+    Email = test@mail.ru
+    Password = 111111
   steps:
-
+    - Нажать Sing up
+    - Заполнить поля регистрации
+    - Нажать Submit
   expected-result: |
+    После завершения регистрации открывается страница комьюнити
+    На странице отображаются данные пользователя - никнейм    
 
-- summary: | # регистрация на сайте
-    Успешная регистрация нового пользователя на сайте с помощью учетной записи GitHub
+- summary: | # регистрация
+    Успешный сброс пароля с помощью E-mail
   requirement: |
     Пользователь имеет возможность регистрации в системе с помощью E-mail, GitHub, Discord
   prerequisites: |
     Открыта страница https://codebattle.hexlet.io/
   test-data: |
-
+    Nickname = test
+    Email = test@mail.ru
+    Password = 111111
   steps:
-
+    - Нажать Sing in
+    - Нажать 'Forgot your password?'
+    - Заполнить поле E-mail
+    - Проверить почту
+    - Перейти по ссылке из входящего письма от noreply@codebattle
+    - Указать новый пароль
+    - Войти в систему с новым паролем
   expected-result: |
+    Пароль сброшен
+    Пользователь зашел в систему после сброса пароля
 
-- summary: | # регистрация на сайте
-    Успешная регистрация нового пользователя на сайте с помощью учетной записи Discord
+- summary: | # регистрация
+    Успешная регистрация нового пользователя на сайте с помощью GitHub, Discord
   requirement: |
     Пользователь имеет возможность регистрации в системе с помощью E-mail, GitHub, Discord
   prerequisites: |
     Открыта страница https://codebattle.hexlet.io/
   test-data: |
-
+    GitHub = your data
+    Discord = your data
   steps:
-
+    - Нажать Sing in
+    - Выбрать Sing in with Github
+    - Авторизироваться через GitHub
+    - Открыть меню пользователя
+    - Нажать Sing Out
+    - Нажать Sing in
+    - Выбрать Sing in with Github
+    - Авторизироваться через GitHub
+      ---
+    - Нажать Sing in
+    - Выбрать Sing in with Discord
+    - Авторизироваться через Discord
+    - Меню пользователя
+    - Выйти нажать Sing Out
+    - Нажать Sing in
+    - Выбрать Sing in with Discord
+    - Авторизироваться через Discord
   expected-result: |
+    После завершения регистрации открывается страница комьюнити
+    На странице отображаются данные пользователя - никнейм Github или Discord
 
-- summary: | # регистрация на сайте
-    Входящее письмо подтверждение о регистрации на e-mail пользователя
+- summary: | # авторизация
+    Успешно удалить интеграцию с GitHub, Discord
   requirement: |
-    Пользователь имеет возможность зарегистрироваться в системе
+    Пользователь имеет возможность регистрации в системе с помощью E-mail, GitHub, Discord
   prerequisites: |
+    Пользователь авторизирован
     Открыта страница https://codebattle.hexlet.io/
   test-data: |
-
+    GitHub = your data
+    Discord = your data
   steps:
-
+    - Меню пользователя
+    - Перейти в Settings
+    - Нажать Unlink Github
+    - Нажать Sing in
+    - Выбрать Sing in with Github
+      ---
+    - Меню пользователя
+    - Перейти в Settings
+    - Нажать Unlink Discord
+    - Нажать Sing in
+    - Выбрать Sing in with Discord
   expected-result: |
+    Аккаунты GitHub, Discord больше не интегрированы с Codebattle
+    Нет возможности авторизироваться с помощью GitHub, Discord
 
-- summary: | # вход в систему
-    Успешный вход в систему зарегистрированного пользователя по E-mail
+- summary: | # авторизация
+    Успешный вход в систему зарегистрированного пользователя
   requirement: |
-    Пользователь имеет возможность зарегистрироваться в системе
+    Пользователь имеет возможность регистрации в системе с помощью E-mail, GitHub, Discord
   prerequisites: |
+    Пользователь зарегистрирован в системе
     Открыта страница https://codebattle.hexlet.io/
   test-data: |
-
+    Nickname = test
+    Email = test@mail.ru
+    Password = 111111
   steps:
-
+    - Нажать Sign In
+    - Авторизироваться с помощью E-mail
+    - Нажать Submit
   expected-result: |
+    После авторизации открывается страница комьюнити
+    На странице отображаются данные пользователя - никнейм
 
-- summary: | # вход в систему
-    Успешный вход в систему зарегистрированного пользователя с помощью учетной записи GitHub
-  requirement: |
-    Пользователь имеет возможность зарегистрироваться в системе
-  prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/
-  test-data: |
-
-  steps:
-
-  expected-result: |
-
-- summary: | # вход в систему
-    Успешный вход в систему зарегистрированного пользователя с помощью учетной записи Discord
-  requirement: |
-    Пользователь имеет возможность зарегистрироваться в системе
-  prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/
-  test-data: |
-
-  steps:
-
-  expected-result: |
-
-- summary: | # выход из системы
-    Успешно выйти из системы после аутентификации
-  requirement: |
-    Пользователь имеет возможность зарегистрироваться в системе
-  prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/
-  test-data: |
-
-  steps:
-
-  expected-result: |
-
-- summary: | # участие без регистрации
-    Успешно принять участие в баттле без регистрации
-  requirement: |
-    Пользователь имеет возможность принять участие в баттле без регистрации
-  prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/
-  test-data: |
-
-  steps:
-
-  expected-result: |
-
-Страница комьюнити: |
-
-- summary: | # создание баттла
+- summary: | # создать баттл
     Успешное создание новой игры с другими пользователями
   requirement: |
-    Пользователь имеет возможность создать баттл
+    При создании баттла доступны настройки - уровень сложности, соперник, задача, таймер
   prerequisites: |
-    Пользователь прошел аутентификацию
+    Пользователь авторизирован
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
+    New battle settings:
     Level =	1
     Game Type =	With other users
     Time control = 10
@@ -129,458 +136,712 @@
     Game Type =	With other users
     Time control = 15
     Choose task by name or tags = random task
-    Tags =	hash-maps
+    Tags = hash-maps
     ---
     Level =	3
     Game Type =	With other users
     Time control = 40
     Choose task by name or tags = random task
-    Tags =	math
+    Tags = math
   steps:
-
+    - Нажать CREATE A GAME
+    - Выставить настройки
+    - Нажать Create battle
   expected-result: |
+    Новый баттл отображается на странице комьюнити в списке активных баттлов
+    Пользователь находится в режиме ожидания второго игрока
 
-- summary: | # создание баттла
+- summary: | # создать баттл
     Успешное создание новой игры с другом
   requirement: |
-    Пользователь имеет возможность создать баттл
+    При создании баттла доступны настройки - уровень сложности, соперник, задача, таймер
   prerequisites: |
-    Пользователь прошел аутентификацию
+    Пользователь авторизирован
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
+    Your friend = никнейм зарегистрированного пользователя в системе
+    ---
+    New battle settings:
     Level =	1
     Game Type =	With a friend
     Time control = 5
+    Choose opponent = your friend
     Choose task by name or tags =	random task
     Tags = collection
     ---
     Level =	2
     Game Type =	With a friend
-    Time control =	20
+    Time control = 20
+    Choose opponent = your friend
     Choose task by name or tags =	random task
-    Tags =	math
+    Tags = math
     ---
     Level =	4
     Game Type =	With a friend
     Time control = 50
+    Choose opponent = your friend
     Choose task by name or tags =	random task
     Tags = rest
   steps:
-
+    - Нажать CREATE A GAME
+    - Выставить настройки
+    - Нажать Create battle
+    - Нажать на иконку 'invites' в шапке сайта
+    - Отменить баттл нажать Cancel
   expected-result: |
+    Отображается уведомление об отправленном приглашении и кому
+    Приглашение можно отменить
 
-- summary: | # создание баттла
+- summary: | # создать баттл
     Успешное создание новой игры с ботом
   requirement: |
-    Пользователь имеет возможность создать баттл
+    При создании баттла доступны настройки - уровень сложности, соперник, задача, таймер
   prerequisites: |
-    Пользователь прошел аутентификацию
+    Пользователь авторизирован
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
+    New battle settings:
     Level =	1
     Game Type =	With a bot
     Time control = 3
     Choose task by name or tags =	random task
     Tags = hash-maps
-	  ---
+    ---
     Level =	2
     Game Type =	With a bot
     Time control = 30
     Choose task by name or tags =	random task
     Tags = strings
-	  ---
+    ---
     Level =	4
     Game Type =	With a bot
     Time control = 60
     Choose task by name or tags =	random task
     Tags = collection
   steps:
-
+    - Нажать CREATE A GAME
+    - Выставить настройки
+    - Нажать Create battle
   expected-result: |
+    Открывается страница баттла с ботом, можно играть
 
-- summary: | # создание баттла
-    Проверка публикации созданного баттла в списке активных баттлов
+- summary: | # создать баттл
+    Успешно отменить созданный баттл
   requirement: |
-    Пользователь имеет возможность создать баттл
+    При создании баттла доступны настройки - уровень сложности, соперник, задача, таймер
   prerequisites: |
-    Пользователь прошел аутентификацию
+    Пользователь авторизирован
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-
+    New battle settings:
+    Level = 1
+    Game Type = With other users
+    Time control = any
+    Task = rect_area
+    Tags = any
+    Weapon = Node.js 16.17.0
   steps:
-    - вкладка LOBBY
+    - Нажать CREATE A GAME
+    - Выставить настройки
+    - Нажать Create battle
+    - На странице комьюнити вкладка LOBBY
+    - Нажать крестик напротив созданного баттла
+    - Проверить вкладка COMPLETED GAMES
+      ---
+    - Нажать CREATE A GAME
+    - Выставить настройки
+    - Нажать Create battle
+    - На странице комьюнити вкладка LOBBY
+    - Нажать Continue
+    - На открывшейся странице нажать Cancel
+    - Проверить вкладка COMPLETED GAMES
   expected-result: |
-
-- summary: | # принять участие в баттле 
-    Успешно принять участие в баттле с другим пользователем
-  requirement: |
-    Пользователь имеет возможность выбрать любой доступный баттл и принять участие
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-
-  steps:
-    - вкладка LOBBY
-  expected-result: |
-
-- summary: | # принять участие в баттле 
-    Успешно принять участие в баттле с ботом
-  requirement: |
-    Пользователь имеет возможность выбрать любой доступный баттл и принять участие
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-
-  steps:
-    - вкладка LOBBY
-  expected-result: |
+    Баттл отменен
+    В списке активных баттлов больше не отображается
+    В список завершённых баттлов не отображается
 
 - summary: | # принять участие в баттле
-    Успешно принять участие в баттле по ссылке от друга
+    Успешно принять участие в баттле без регистрации
   requirement: |
-    Пользователь имеет возможность выбрать любой доступный баттл и принять участие
+    Пользователь имеет возможность принять участие в баттле
   prerequisites: |
-    Ссылка приглашение от друга
+    Открыта страница https://codebattle.hexlet.io/
   test-data: |
-
+    no data
   steps:
-    
+    - Нажать на кнопку TRY SIMPLE BATTLE
   expected-result: |
+    Переход на страницу баттла, можно играть
 
-- summary: | # просмотр баттла
-    Успешный просмотр хода идущего баттла других игроков 
+- summary: | # принять участие в баттле 
+    Успешно принять участие в баттле из списка активных баттлов
   requirement: |
-    Пользователи имеют возможность следить за ходом активного баттла других игроков
+    Пользователь имеет возможность принять участие в баттле
   prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-
-  steps:
-    - вкладка LOBBY
-  expected-result: |
-
-- summary: | # просмотр баттла
-    Успешный просмотр записи завершенного баттла
-  requirement: |
-    Завершенная игра доступна в записи
-  prerequisites: |
-    Пользователь прошел аутентификацию
+    Пользователь авторизирован
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
     no data
   steps:
-    - вкладка COMPLETED GAMES
-    - Show
+    - С другим пользователем
+      Вкладка LOBBY
+      Нажать кнопку Fight
+    - С ботом
+      Вкладка LOBBY
+      Нажать кнопку Fight
   expected-result: |
+    Нажав на кнопку Fight - переход на страницу баттла, можно играть
 
-- summary: | # чат
-    Успешная отправка сообщения в общий чат на странице комьюнити
+- summary: | # принять участие в баттле 
+    Успешно принять участие в баттле по приглашению от друга
   requirement: |
-    В игре есть чат, в котором общаются зарегистрированные пользователи
+    Пользователь имеет возможность принять участие в баттле
   prerequisites: |
-    Пользователь прошел аутентификацию
+    Пользователь авторизирован
     Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    Текст = Hello word! (эмодзи)
-  steps:
-
-  expected-result: |
-
-- summary: | # чат
-    Успешная отправка приглашения на бой пользователю он-лайн
-  requirement: |
-    В игре есть чат, в котором общаются зарегистрированные пользователи
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
+    Пользователю отправлено приглашение на баттл от другого зарегистрированного пользователя
   test-data: |
     no data
   steps:
-    - Send fight invite
+    - Нажать на иконку 'invites' в шапке сайта
+    - Нажать Assept
+      ---
+    - Нажать на иконку 'invites' в шапке сайта
+    - Нажать Decline
   expected-result: |
+    Приглашение можно принять - переход на страницу баттла, можно играть с другом
+    Приглашение можно отклонить
 
-- summary: | # чат
-    Успешная отправка приватного сообщения пользователю он-лайн
+- summary: | # принять участие в баттле
+    Успешно принять участие в баттле по ссылке от пользователя
   requirement: |
-    В игре есть чат, в котором общаются зарегистрированные пользователи
+    Пользователь имеет возможность принять участие в баттле
   prerequisites: |
-    Пользователь прошел аутентификацию
+    Пользователь авторизирован
     Открыта страница https://codebattle.hexlet.io/#lobby
+    Пользователю отправлена ссылка на баттл от другого зарегистрированного пользователя
   test-data: |
     no data
   steps:
-    - Send message
+    - Открыть ссылку
+    - Нажать Join
   expected-result: |
-
-- summary: | # рейтинг
-    Проверка отображения рейтинга LEADERBOARD на странице комьюнити
-  requirement: |
-    За победы и участие пользователи получают очки, формируется общий рейтинг
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    no data
-  steps:
-    - Поочередно нажать на ссылки
-      WEEK
-      MONTH
-      ALL
-  expected-result: |
-
-- summary: | # TOP list
-    Успешный поиск пользователя в TOP list
-  requirement: |
-    За победы и участие пользователи получают очки, формируется общий рейтинг
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    Users = anna-aleksan
-  steps:
-
-  expected-result: |
-
-Батл: |
+    Нажав на кнопку Join - переход на страницу баттла, можно играть с пользователем
 
 - summary: | # процесс баттла
-    Проверка возможности смены языка задания
+    Успешно завершить баттл решив задачу быстрее соперника
+  requirement: |
+    Победа присуждается игроку который верно выполнил условия задачи за меньшее время
+  prerequisites: |
+    Пользователь прошел авторизацию
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    New battle settings:
+    Level = 1
+    Game Type = With a bot
+    Time control = any
+    Task = rect_area
+    Tags = any
+    Weapon = Node.js 16.17.0
+    ---
+    Solution:
+    const _ = require("lodash");
+    const R = require("rambda");
+    const solution = (width, length) => {
+    return width * length;
+    };
+    module.exports = solution;
+  steps:
+    - Нажать CREATE A GAME
+    - Выставить настройки
+    - Нажать Create battle
+    - В редакторе кода ввести решение
+    - Нажать Run
+    - В модальном окне нажать Thanks
+    - Нажать Back to Home
+    - Перейти во вкладку COMPLETED GAMES
+  expected-result: |
+    Баттл завершается
+    Высвечивается модальное окно с информацией о победе
+    Баттл больше не отображается LOBBY
+    Баттл отображается во вкладке COMPLETED GAMES с итогами игры  
+
+- summary: | # процесс баттла
+    Успешно проверить написание кода на решение задачи
+  requirement: |
+    Победа присуждается игроку который верно выполнил условия задачи за меньшее время
+  prerequisites: |
+    Пользователь прошел авторизацию
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    New battle settings:
+    Level = 1
+    Game Type = With a bot
+    Time control = 60 min
+    Task = rect_area
+    Tags = any
+    Weapon = Node.js 16.17.0
+    ---
+    Solution:
+    const _ = require("lodash");
+    const R = require("rambda");
+    const solution = (width, length) => {
+    return width * length;
+    };
+    module.exports = solution;
+  steps:
+    - Нажать CREATE A GAME
+    - Выставить настройки
+    - Нажать Create battle
+    - Очистить окно редактора кода
+    - Нажать на иконку Run
+    - В редакторе кода ввести верное решение
+    - Нажать на иконку Run
+  expected-result: |
+    На условие игры не влияет
+    На ход игры не влияет
+    Попытки не ограничены
+
+- summary: | # процесс баттла
+    Успешно сыграть реванш с тем же соперником
+  requirement: |
+    Победа присуждается игроку который верно выполнил условия задачи за меньшее время
+  prerequisites: |
+    Пользователь прошел авторизацию
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    New battle settings:
+    Level = 1
+    Game Type = With other users
+    Time control = 3 min
+    Task = rect_area
+    Tags = any
+    Weapon = Node.js 16.17.0
+    ---
+    Solution:
+    const _ = require("lodash");
+    const R = require("rambda");
+    const solution = (width, length) => {
+    return width * length;
+    };
+    module.exports = solution;
+  steps:
+    - Нажать CREATE A GAME
+    - Выставить настройки
+    - Нажать Create battle
+    - Решить задачу
+    - В модальном окне нажать Thanks
+    - Нажать Rematch
+    - Дождаться подтверждения соперника
+  expected-result: |
+    После подтверждения реванша соперником на странице загружается интерфейс баттла с новой задачей 
+    Сохраняются настройки и соперник
+
+- summary: | # процесс баттла
+    Успешно сдаться во время баттла
+  requirement: |
+    Пользователь имеет возможность сдаться во время баттла
+  prerequisites: |
+    Пользователь прошел авторизацию
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    New battle settings:
+    Level = 1
+    Game Type = With a bot
+    Time control = any
+    Task = rect_area
+    Tags = any
+    Weapon = Node.js 16.17.0
+  steps:
+    - Нажать CREATE A GAME
+    - Выставить настройки
+    - Нажать Create battle
+    - Нажать иконку Give Up
+    - Нажать Give Up
+    - В модальном окне нажать I'll be back
+  expected-result: |
+    Баттл окончен, победа присуждается сопернику
+    Сообщение с информацией итогов баттла
+
+- summary: | # процесс баттла
+    Успешно сменить отображение текста задания на другой язык
   requirement: |
     Задачи даны на двух языках — русском и английском
   prerequisites: |
     Пользователь прошел аутентификацию
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-    Users = anna-aleksan
+    no data
   steps:
-
+    - Стать участником баттла
+    - На странице баттла нажать на иконку смены языка
+    - Выбрать поочередно
+      RU
+      EN
+    - Нажать на иконку Expend
+    - Выбрать поочередно
+      RU
+      EN
+    - Нажать Close
+    - Обновить страницу
+    - Выйти из баттла нажать Back to Home
+    - Вернуться в баттл нажать Continue
   expected-result: |
+    При смене языка через функционал интерфейса переводится текст задания
+    Настройки не сбрасываются при обновлении страницы
 
 - summary: | # процесс баттла
-    Успешный выбор языка програмирования
+    Успешно поменять язык программирования во время баттла
   requirement: |
-    Каждый участник может выбрать язык программирования из списка, на котором будет решать задачу
+    Пользователь имеет возможность менять язык программирования во время решения
   prerequisites: |
     Пользователь прошел аутентификацию
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-    Users = anna-aleksan
+    no data
   steps:
-
+    - Стать участником баттла
+    - На странице баттла из выпадающего списка выбрать поочередно язык
+      C++ 20
+      Clojure 1.11.2.1
+      C# 6.0.100
+      Dart 2.17.6
+      Elixir 1.15.0
+      Golang 1.19.0
+      Haskell 8.4.3
+      Java 20
+      Node.js 16.17.0
+      Kotlin 1.9.10
+      Php 8.1.8
+      Python 3.12.0
+      Ruby 3.2.2
+      Typescript 4.7.4
+    - Обновить страницу
+    - Выйти из баттла нажать Back to Home
+    - Вернуться в баттл нажать Continue
   expected-result: |
+    Язык программирования меняется корректно
+    Не влияет на ход и условия игры
+    Настройка сохраняется
 
 - summary: | # процесс баттла
-    Успешная смена языка програмирования во время баттла
+    Успешно сбросить код до исходного состояния
   requirement: |
-    Каждый участник может выбрать язык программирования из списка, на котором будет решать задачу
+    Пользователь имеет возможность менять язык программирования во время решения
   prerequisites: |
     Пользователь прошел аутентификацию
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-    Users = anna-aleksan
+    New battle settings:
+    Level = 1
+    Game Type = With a bot
+    Time control = any
+    Task = rect_area
+    Tags = any
+    Weapon = Node.js 16.17.0
   steps:
-
-  expected-result: |
+    - Нажать CREATE A GAME
+    - Выставить настройки
+    - Нажать Create battle
+    - Удалить код
+    - Нажать иконку Reset Editor
+    - Внести изменения в код
+    - Нажать иконку Reset Editor
+  expected-result: |  
+    Код возвращается в исходное состояние
+    Не влияет на ход и условия игры
 
 - summary: | # процесс баттла
-    Отображение процесса кодирования в окне соперника
+    Успешный переход в редактор кода Vim
   requirement: |
-    Во время баттла игроки видят друг у друга редактор с кодом, вывод тестов
+    Пользователь имеет возможность менять язык программирования во время решения
   prerequisites: |
     Пользователь прошел аутентификацию
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-    Users = anna-aleksan
+    New battle settings:
+    Level = 1
+    Game Type = With a bot
+    Time control = any
+    Task = rect_area
+    Tags = any
+    Weapon = Node.js 16.17.0
+    ---
+    Solution:
+    const _ = require("lodash");
+    const R = require("rambda");
+    const solution = (width, length) => {
+    return width * length;
+    };
+    module.exports = solution;
   steps:
-
+    - Нажать CREATE A GAME
+    - Выставить настройки
+    - Нажать Create battle
+    - В редакторе кода нажать на иконку Vim
+    - Ввести
+      (esc):%s/0/width * length/g
+      Enter
+    - Нажать на иконку Run
+    - В модальном окне нажать Thanks
   expected-result: |
-
-- summary: | # процесс баттла
-    Смена редактора кода на Vim
-  requirement: |
-    Каждый участник может выбрать язык программирования из списка, на котором будет решать задачу
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    Users = anna-aleksan
-  steps:
-
-  expected-result: |
+    Редактор Vim работает корректно
+    Из редактора легко выйти
   
 - summary: | # процесс баттла
     Смена темы оформления Dark/Light
   requirement: |
-    Каждый участник может выбрать язык программирования из списка, на котором будет решать задачу
+    Пользователь имеет возможность менять язык программирования во время решения
   prerequisites: |
     Пользователь прошел аутентификацию
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-    Users = anna-aleksan
+    no data
   steps:
-
+    - Стать участником баттла
+    - Нажать на кнопку Light
+    - Нажать на кнопку Dark
   expected-result: |
+    При смене темы оформления меняется фон и цвет шрифта в окне кода
 
 - summary: | # процесс баттла
-    Кнопка сдаться 'Give Up'
-  requirement: |
-    Пользователь имеет возможность сдаться во время баттла
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    Users = anna-aleksan
-  steps:
-
-  expected-result: |
-
-- summary: | # процесс баттла
-    Кнопка сброса 'Reset Editor'
-  requirement: |
-    Можно менять язык программирования во время решения
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    Users = anna-aleksan
-  steps:
-
-  expected-result: |
-
-- summary: | # процесс баттла
-    'Run'
-  requirement: |
-    Победа присуждается игроку который верно выполнил условия задачи за меньшее время
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    Users = anna-aleksan
-  steps:
-
-  expected-result: |
-
-- summary: | # процесс баттла
-    Кнопка вызова окна описание задания 'Task Description'
-  requirement: |
-    Задачи даны на двух языках — русском и английском
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    Users = anna-aleksan
-  steps:
-
-  expected-result: |
-
-- summary: | # процесс баттла
-    Кнопка вызова подсказки 'Show guide'
+    Успешный вызов обучающих подсказок
   requirement: |
     Возможность ознакомления нового пользователя с функционалом и возможностями
   prerequisites: |
     Пользователь прошел аутентификацию
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-    Users = anna-aleksan
+    no data
   steps:
-
+    - Стать участником баттла
+    - Нажать кнопку Show guide на интерфейсе
+    - Нажать Next
+    - Просмотреть все подсказки
+    - Нажать Back
+    - Нажать Крестик
   expected-result: |
+    Подсказки отображаются корректно
+    Описывают основной функционал интерфейса
 
 - summary: | # процесс баттла
-    Кнопка 'Open Histore'
-  requirement: |
-    Завершенная игра доступна в записи. Редактор для ввода кода выглядит как проигрыватель
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    Users = anna-aleksan
-  steps:
-
-  expected-result: |
-
-- summary: | # процесс баттла
-    Кнопка 'Try again'
-  requirement: |
-    Пользователь имеет возможность выбрать любой доступный баттл и принять участие
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    Users = anna-aleksan
-  steps:
-
-  expected-result: |
-
-- summary: | # процесс баттла
-    Кнопка 'Sing up'
-  requirement: |
-    
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    Users = anna-aleksan
-  steps:
-
-  expected-result: |
-
-- summary: | # процесс баттла
-    Кнопка 'Back to Home'
-  requirement: |
-    
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    Users = anna-aleksan
-  steps:
-
-  expected-result: |
-
-- summary: | # процесс баттла
-    Чат с соперником
+    Успешная отправка сообщения в чат с соперником
   requirement: |
     В игре есть чат, в котором общаются зарегистрированные пользователи
   prerequisites: |
     Пользователь прошел аутентификацию
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-    Users = anna-aleksan
+    Сообщение = Hello! (эмодзи)
   steps:
-
+    - Чат 'General'
+    - В поле ввода текста ввести сообщение
+    - Нажать Send
   expected-result: |
+    Сообщение отобразилось в окне чата с соперником
 
-- summary: | # процесс баттла
-    Send Feedback
+- summary: | # просмотр
+    Успешно просмотреть ход идущего баттла других игроков 
   requirement: |
-    
+    Пользователи имеют возможность следить за ходом активного баттла других игроков
   prerequisites: |
-    Пользователь прошел аутентификацию
+    Пользователь авторизирован
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-    Users = anna-aleksan
+    no data
   steps:
-
+    - На странице комьюнити вкладка LOBBY
+    - Выбрать идущий баттл
+    - Нажать Show 
+    - На странице баттла нажать Back to Home
   expected-result: |
+    Нажав Show - переход на страницу баттла
+    Баттл доступен только для просмотра
+    На ход игры и условия не влияет
 
-- summary: | # процесс баттла
-    Вкладка 'Output' вывод тестов
+- summary: | # просмотр
+    Успешно просмотреть запись завершенного баттла из интерфейса баттла
   requirement: |
-    Во время баттла игроки видят друг у друга редактор с кодом, вывод тестов
+    Завершенная игра доступна в записи. Редактор для ввода кода выглядит как проигрыватель
   prerequisites: |
-    Пользователь прошел аутентификацию
+    Пользователь авторизирован
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-    Users = anna-aleksan
+    New battle settings:
+    Level = 1
+    Game Type = With a bot
+    Time control = any
+    Task = rect_area
+    Tags = any
+    Weapon = Node.js 16.17.0
   steps:
-
+    - Принять участие в любом баттле
+    - Дождаться завершение баттла
+    - Нажать Open Histore
+    - В видео проигрывателе
+      Нажать Play
+      Нажать Pause
+      Нажать Настройки
+      Выбрать X2
+      Нажать Play
+      Нажать Настройки
+      Кликнуть Copy history game
+    - В новом окне браузера вставить скопированную ссылку в адресную строку
+    - Выйти из аккаунта
+    - В новом окне браузера вставить скопированную ссылку в адресную строку
   expected-result: |
+    Можно просмотреть запись завершённой игры не выходя из игры
+    Запись доступна по ссылке
+    Записью можно делиться с незарегистрированными в системе пользователями
 
-Турнир: |
+- summary: | # чат
+    Успешная отправка сообщения в общий чат на странице комьюнити
+  requirement: |
+    В игре есть чат, в котором общаются зарегистрированные пользователи
+  prerequisites: |
+    Пользователь авторизирован
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    Сообщение = Hello word! (эмодзи)
+  steps:
+    - Чат 'General'
+    - В поле ввода текста ввести сообщение
+    - Нажать Send
+  expected-result: |
+    Сообщение отобразилось в окне общего чата
+
+- summary: | # чат
+    Успешная отправка приватного сообщения пользователю онлайн
+  requirement: |
+    В игре есть чат, в котором общаются зарегистрированные пользователи
+  prerequisites: |
+    Пользователь авторизирован
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    Сообщение = Test
+    Пользователь = любой игрок онлайн
+  steps:
+    - В окне Online players
+    - Нажать на иконку письма Send message
+    - Выбрать пользователя из списка
+    - В поле ввода текста ввести сообщение
+    - Поменять приватный чат на 'General'
+      --- 
+    - В окне Online players
+    - Кликнуть на никнейм пользователя
+    - Выбрать из списка Direct message
+    - В поле ввода текста ввести сообщение
+    - Поменять приватный чат на 'General'
+  expected-result: |
+    Создан отдельный чат с пользователем
+    В общем чате приватные сообщения отображаются с пометкой 
+
+- summary: | # пользователи онлайн
+    Успешная отправка приглашения на бой пользователю онлайн
+  requirement: |
+    На сайте есть список пользователей онлайн
+  prerequisites: |
+    Пользователь авторизирован
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    New battle settings:
+    Level = 1
+    Game Type = With a bot
+    Time control = any
+    Task = rect_area
+    Tags = any
+    Weapon = Node.js 16.17.0
+  steps:
+    - В окне Online players
+    - Нажать на иконку Send fight invite
+    - Выбрать пользователя из списка
+    - Выставить настройки
+    - Нажать Create battle
+      ---
+    - В окне Online players
+    - Кликнуть на никнейм пользователя
+    - Выбрать из списка Send fight invite
+    - Выставить настройки
+    - Нажать Create battle
+  expected-result: |
+    Пользователю отправлено приглашение на бой
+    Отображается уведомление об отправленном приглашении
+    Приглашение можно отменить
+
+- summary: | # пользователи онлайн
+    Просмотр информации о пользователе в онлайн
+  requirement: |
+    В игре есть чат, в котором общаются зарегистрированные пользователи
+  prerequisites: |
+    Пользователь авторизирован
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    no data
+  steps:
+    - В окне Online players
+    - Кликнуть на никнейм пользователя
+    - Выбрать из списка Info
+  expected-result: |
+    Переход на страницу со статистикой и общей информацией о пользователе
+
+- summary: | # рейтинг
+    Проверка отображения рейтинга на странице комьюнити
+  requirement: |
+    За победы и участие пользователи получают очки, формируется общий рейтинг
+  prerequisites: |
+    Пользователь авторизирован
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    no data
+  steps:
+    - Поочередно нажать на ссылки LEADERBOARD
+      WEEK
+      MONTH
+      ALL
+  expected-result: |
+    При переходе по ссылкам в окне рейтинга обновляется информация 
+
+- summary: | # рейтинг
+    Успешный поиск пользователя в Users rating
+  requirement: |
+    За победы и участие пользователи получают очки, формируется общий рейтинг
+  prerequisites: |
+    Пользователь авторизирован
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    Users = anna-alexsan
+    Rank = 199
+    Elo_rating = 1200
+    Games_played = 10
+    Joined at = December 15, 2023
+  steps:
+    Search = no data
+    Rating = weekly
+    Pages =	20
+    With bots =	no
+    Filters =	Rank
+	  ---
+    Search = no data
+    Rating = monthly
+    Pages =	40
+    With bots =	yes
+    Filters =	Joined
+	  ---
+    Search = no data
+    Rating = monthly
+    Pages =	30
+    With bots =	no
+    Filters =	Games played
+	  ---
+    Search = 'anna'
+    Rating = total
+    Pages =	50
+    With bots =	no
+    Filters =	Rating
+  expected-result: |
+    Список пользователь корректно фильтруется по всем столбцам
+    Поиск показывает релевантные результаты
+    Переход между страницами работает корректно
 
 - summary: | # турнир
     Успешно зарегистрироваться на турнир 
@@ -590,38 +851,67 @@
     Пользователь прошел аутентификацию
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-    Users = anna-aleksan
+    no data
   steps:
-    - вкладка TOURNAMENTS
+    - Вкладка TOURNAMENTS
+    - Список Live tournaments
+    - Нажать Show
+    - Нажать Join
+    - Нажать Leave
   expected-result: |
+    Зарегистрирована заявка на участие в предстоящем турнире
 
 - summary: | # турнир
     Просмотр завершенных турниров
   requirement: |
-    Пользователь имеет возможность выбрать любой доступный баттл и принять участие
+    Завершенная игра доступна в записи. Редактор для ввода кода выглядит как проигрыватель
   prerequisites: |
     Пользователь прошел аутентификацию
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
     Users = anna-aleksan
   steps:
-    - вкладка TOURNAMENTS
+    - Вкладка TOURNAMENTS
+    - Список Completed tournaments
+    - Нажать Show
   expected-result: |
+    Завершённый турнир доступен в записи
 
 - summary: | # турнир
     Успешное создание турнира
   requirement: |
-    Пользователь имеет возможность выбрать любой доступный баттл и принять участие
+    Пользователь имеет возможность создать баттл
   prerequisites: |
     Пользователь прошел аутентификацию
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-    Users = anna-aleksan
+    Name = default
+    Type = individual
+    Description = default
+    Starts at = default
+    Access type = public
+    Task strategy = game
+    Use chat = yes
+    Task provider = level
+    Level = elementery
+    Players limit = default
+    Default language = default
+    Match timeout seconds = default
+    Break duration seconds = default
   steps:
-    - вкладка TOURNAMENTS
+    - Вкладка TOURNAMENTS
+    - Нажать Create a new tournament
+    - Выставить настройки
+    - Нажать Create
+    - Вернуться к списку турниров
+    - Найти созданный турнир в списке Live tournaments
+    - Нажать Show
+    - В меню три точки выбрать Canсel
   expected-result: |
-
-Меню пользователя: |
+    Турнир создан 
+    Статус в режиме ожидания игроков
+    Отображается в списке активных турниров
+    Турнир можно отменить
 
 - summary: | # меню пользователя
     Просмотра статистики пользователя в личном кабинете
@@ -631,12 +921,15 @@
     Пользователь прошел аутентификацию
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-    User = anna-aleksan
+     no data
   steps:
-    - My Profile
-    - STATISTICS
-    - COMPLETED GAMES
+    - Нажать на аватар в шапке 
+    - Выбрать My Profile
+    - Вкладка STATISTICS
+    - Вкладка COMPLETED GAMES
   expected-result: |
+    В личном профиле отображается статистика пользователя
+    История баттлов пользователя
 
 - summary: | # меню пользователя
     Изменение индивидуальных настроек
@@ -646,18 +939,19 @@
     Пользователь прошел аутентификацию
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-    User = anna-alexsan
-    Weapon = Java
+    Your name = test
+    Your weapon = Pyton
+    Select sound type = Silent
+    Select sound level = off
   steps:
-    - Settings
-    - Your name
-    - Your weapon
-    - Select sound type
-    - Silent
-    - Save
-    - Создать игру с ботом
-    - Give Up
+    - Нажать на аватар в шапке 
+    - Выбрать Settings
+    - Изменить настройки
+    - Нажать Save
   expected-result: |
+    Отображение никнейма в системе поменялось на новый
+    По умолчанию при создании баттла установлен соответствующий язык программирования
+    Звук в соответствии с новыми настройками
 
 - summary: | # меню пользователя
     Успешный переход по ссылкам в меню пользователя
@@ -667,29 +961,35 @@
     Пользователь прошел аутентификацию
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-    User = anna-aleksan
+    no data
   steps:
-    - Users rating (TOP list)
-    - Tasks
-    - Tournaments
-    - SourceCode
-    - Hexlet
-    - Join Discord
-    - Tg#codebattle
+    - Перейти по ссылкам
+      Users rating
+      Tasks
+      Tournaments
+      SourceCode
+      Hexlet
+      Join Discord
+      Tg#codebattle
   expected-result: |
+    Все пункты меню кликабельные
+    Ссылки рабочие
 
 - summary: | # меню пользователя
-    Успешный просмотр содержания заданий для турнира
+    Успешный просмотр заданий для турнира
   requirement: |
-    
+    Зарегистрированный пользователь имеет доступ к личному кабинету со своей статистикой и настройками
   prerequisites: |
     Пользователь прошел аутентификацию
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-    User = anna-aleksan
+    no data
   steps:
-    - Tasks
+    - Нажать на аватар в шапке 
+    - Выбрать Tasks
+    - Нажать Show
   expected-result: |
+    Возможность просмотреть задачи для баттлов
 
 - summary: | # шапка
     Проверка возможности возврата на главную страницу кликом по логотипу 
@@ -701,262 +1001,119 @@
   test-data: |
     no data
   steps:
-
+    - Нажать на аватар в шапке 
+    - Выбрать Settings
+    - Нажать на логотип в шапке
   expected-result: |
+    Кликом по логотипу, пользователь возвращается на страницу комьюнити
 
 Не функциональные тесты: |
 
-- summary: | # ответ сервера
-    Проверка ответов от сервера
-  requirement: |
-    Сайт должен быть разработан с учетом удобства использования и оптимизирован для скорости работы
-  prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    User = anna-aleksan
-  steps:
-
-  expected-result: |
-
 - summary: | # кроссбраузерность
-
+    Кроссбраузерность сайта
   requirement: |
     Сайт должен быть протестирован на совместимость с последними версиями браузеров
   prerequisites: |
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
-
+    Браузер = Firefox 119.0.1 (64-разрядный)
+    Браузер = Google Chrome Версия 119.0.6045.124 (Официальная сборка), (64 бит)
   steps:
-  
+    - Открыть в Firefox https://hexlet-products-store.vercel.app/
+    - Открыть в Chrome https://hexlet-products-store.vercel.app/
+    - Сравнить отображение шрифтов
+      Страница главная
+      Sing in
+      Sing up
+      Страница комьюнити
+      Шапка сайта
+      Интерфейс баттла
+      Меню пользователя
+    - Сравнить интерактивные элементы
+      Поля ввода
+      Выпадающее меню
+      Кнопки
+      Ползунки
+      Пагинация
+      Крестики
   expected-result: |
+    Элементы сайта отображаются корректно в разных браузерах, на функционал не влияет, дизайн сайта не ломает
 
 - summary: | # адаптивность
-
+    Адаптивность сайта на смартфоне
   requirement: |
     Сайт должен быть удобным на мобильном устройстве
   prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/#lobby
+    Открыта страница https://codebattle.hexlet.io
   test-data: |
-
+    Устройство = iPhone 11
+    Разрешение экрана iPhone 11 = 828x1792
+    Инструмент = DevTools/Toggle device toolbar
+    Ориентация = Вертикальное расположение
   steps:
-  
+    - Скролл вниз
+    - Прокликать элементы интерфейса
+      Главная страница
+      Sing in
+      Sing up
+      Шапка сайта
+      Страница комьюнити
+      Интерфейс баттла
+      Меню пользователя
   expected-result: |
+    Дизайн и функционал сайта не поменялся
+    Все элементы сайта помещаются в экран
+    Текст читается
 
 - summary: | # безопасность
-
+    Проверка действующего сертификата SSL
   requirement: |
     Сайт должен быть безопасным и защищать данные пользователя
   prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/#lobby
+    Открыта страница https://codebattle.hexlet.io
   test-data: |
-
+    no data
   steps:
-  
+    - Открыть DevTools
+    - В DevTools вкладка Sicurity проверить сертификат SSL
   expected-result: |
+    Проверка сертификата SSL ответ: This page is secure (valid HTTPS)
 
 - summary: | # безопасность
     Проверка защиты чата от XSS
   requirement: |
     Сайт должен быть безопасным и защищать данные пользователя
   prerequisites: |
+    Пользователь прошел аутентификацию
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
+    Текст = <h1>Hello word!:)</h1>
     Текст = <script>alert('Hello word!:)')</script>
   steps:
-  
+    - В поле ввода ввести текст
+    - Нажать Send
+      Чат страница комьюнити
+      Чат баттла
   expected-result: |
+    Поле ввода текста чата защищено
+    HTML и скрипты не обрабатываются
 
-- summary: | # интерфейс главная страница 
-    Проверка отображения и поведение кнопок на главной странице 
+- summary: | # интерфейс кнопки
+    Проверка отображения и поведение кнопок
   requirement: |
     Сайт должен быть разработан с учетом удобства использования и оптимизирован для скорости работы
   prerequisites: |
     Открыта страница https://codebattle.hexlet.io/
-  test-data: |
-
-  steps:
-
-  expected-result: |
-
-- summary: | # интерфейс регистрация
-    Проверка отображения и поведение кнопок на странице регистрации 
-  requirement: |
-    Сайт должен быть разработан с учетом удобства использования и оптимизирован для скорости работы
-  prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/
-  test-data: |
-
-  steps:
-
-  expected-result: |
-
-- summary: | # интерфейс аутентификация
-    Проверка отображения и поведение кнопок на странице аутентификации 
-  requirement: |
-    Сайт должен быть разработан с учетом удобства использования и оптимизирован для скорости работы
-  prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/
-  test-data: |
-
-  steps:
-
-  expected-result: |
-
-- summary: | # интерфейс создание баттла 
-    Проверка работы элементов интерфейса в окне Create a game 
-  requirement: |
-    Сайт должен быть разработан с учетом удобства использования и оптимизирован для скорости работы
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-
-  steps:
-
-  expected-result: |
-
-- summary: | # интерфейс страница комьюнити
-    Проверка отображения и поведение кнопок на странице комьюнити
-  requirement: |
-    Сайт должен быть разработан с учетом удобства использования и оптимизирован для скорости работы
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
     no data
   steps:
-    - Кнопки 
-      CREATE A GAME
-      Send
-      Fight
-      Show
-    - Поочередно перейти по вкладкам
-      LOBBY
-      TOURNAMENTS
-      COMPLETED GAMES
-    - Выпадающее меню General
+    - Навести курсор и кликнуть на кнопки
+      Главная страница
+      Sing in
+      Sing up
+      Шапка сайта
+      Страница комьюнити
+      Интерфейс баттла
+      Меню пользователя
   expected-result: |
-
-- summary: | # интерфейс TOP list
-    Проверка элементов интерфейса в TOP list
-  requirement: |
-    Сайт должен быть разработан с учетом удобства использования и оптимизирован для скорости работы
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    Users = anna-aleksan
-  steps:
-    - Выпадающий список количество результатов на странице
-    - Чекбокс With bots
-    - Пагинация
-    - Кнопки 
-      weekly
-      monthly
-      total
-    - Фильтрация
-      Rank
-      Rating
-      Games played
-      Joined
-  expected-result: |
-
-- summary: | # интерфейс шапка
-    Проверка отображения меню пользователя  
-  requirement: |
-    Сайт должен быть разработан с учетом удобства использования и оптимизирован для скорости работы
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    User = anna-aleksan
-  steps:
-
-  expected-result: |
-
-- summary: | # интерфейс шапка
-    Проверка отображения иконки запроса на бой 
-  requirement: |
-    Сайт должен быть разработан с учетом удобства использования и оптимизирован для скорости работы
-  prerequisites: |
-    Пользователь прошел аутентификацию
-    Открыта страница https://codebattle.hexlet.io/#lobby
-  test-data: |
-    no data
-  steps:
-
-  expected-result: |
-
-Негативные тесты: |
-
-- summary: | # регистрация на сайте
-    Проверка поля ввода Nickname
-  requirement: |
-    Пользователь имеет возможность зарегистрироваться в системе
-  prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/
-  test-data: |
-
-  steps:
-
-  expected-result: |
-
-- summary: | # регистрация на сайте
-    Проверка поля ввода Email
-  requirement: |
-    Пользователь имеет возможность зарегистрироваться в системе
-  prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/
-  test-data: |
-
-  steps:
-
-  expected-result: |
-
-- summary: | # регистрация на сайте
-    Проверка поля ввода Password
-  requirement: |
-    Пользователь имеет возможность зарегистрироваться в системе
-  prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/
-  test-data: |
-
-  steps:
-
-  expected-result: |
-
-- summary: | # регистрация на сайте
-    Проверка поля ввода Password Confirmation
-  requirement: |
-    Пользователь имеет возможность зарегистрироваться в системе
-  prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/
-  test-data: |
-
-  steps:
-
-  expected-result: |
-
-- summary: | # вход в систему
-    Проверка поля ввода Email
-  requirement: |
-    Пользователь имеет возможность зарегистрироваться в системе
-  prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/
-  test-data: |
-
-  steps:
-
-  expected-result: |
-
-- summary: | # вход в систему
-    Проверка поля ввода Password
-  requirement: |
-    Пользователь имеет возможность зарегистрироваться в системе
-  prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/
-  test-data: |
-
-  steps:
-
-  expected-result: |
+    Кнопки навигации отображают свое состояние (наведение, кликабельность, заблокирована)
