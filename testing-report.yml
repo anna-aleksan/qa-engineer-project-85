@@ -1,0 +1,220 @@
+---
+- summary: | # sing up
+    Успешная регистрация нового пользователя на сайте с помощью E-mail
+  status: pass
+
+- summary: | после сброса пароля нет кнопки на главную страницу для продолжения https://codebattle.hexlet.io/ # sing up
+    Успешный сброс пароля с помощью E-mail
+  status: pass
+
+- summary: | # sing up
+    Успешная регистрация нового пользователя на сайте с помощью GitHub, Discord
+  status: pass
+
+- summary: | # sing in
+    Успешно добавить интеграцию с GitHub, Discord после регистрации по E-mail
+  status: pass
+
+- summary: | # sing in
+    Успешно удалить интеграцию с GitHub, Discord
+  status: pass
+
+- summary: | # sing in
+    Успешный вход в систему зарегистрированного пользователя
+  status: pass
+
+- summary: | не соблюдаются условия# create a game
+    Успешное создание новой игры с другими пользователями
+  status: fail
+
+- summary: | не соблюдаются условия# create a game
+    Успешное создание новой игры с ботом
+  status: fail
+
+- summary: | # create a game
+    Успешно отменить созданный баттл с другими пользователями
+  status: pass
+
+- summary: | # fight
+    Успешно принять участие в баттле без регистрации
+  status: pass
+
+- summary: | # fight
+    Успешно принять участие в баттле из списка активных баттлов
+  status: pass
+
+- summary: | # игра с другом create a game
+    Успешное создание новой игры с другом
+  status: pass
+
+- summary: | кнопка не работает Cancel # игра с другом create a game
+    Успешно отменить баттл с другом
+  status: fail
+
+- summary: | # игра с другом create a game
+    Успешно отправить ссылку на баттл другу
+  status: pass
+
+- summary: | не работает Assept Decline # игра с другом fight
+    Успешно отправить ссылку на баттл другу
+  status: fail
+
+- summary: | # игра с другом fight
+    Успешно принять участие в баттле по ссылке от друга
+  status: pass
+
+- summary: | # процесс баттла
+    Успешно завершить баттл решив задачу быстрее соперника
+  status: pass
+
+- summary: | # процесс баттла
+    Успешно проверить написание кода на решение задачи
+  status: pass
+
+- summary: | # процесс баттла
+    Успешно сыграть реванш с тем же соперником
+  status: pass
+
+- summary: | # процесс баттла
+    Успешно сдаться во время баттла
+  status: pass
+
+- summary: | # процесс баттла
+    Успешно сменить отображение текста задания на другой язык
+  status: pass
+
+- summary: | # процесс баттла
+    Успешно поменять язык программирования во время баттла
+  status: pass
+
+- summary: | # процесс баттла
+    Успешно сбросить код до исходного состояния
+  status: pass
+
+- summary: | # процесс баттла
+    Успешный переход в редактор кода Vim
+  status: pass
+
+- summary: | # процесс баттла
+    Смена темы оформления Dark/Light
+  status: pass
+
+- summary: | # процесс баттла
+    Успешный вызов обучающих подсказок
+  status: pass
+
+- summary: | # процесс баттла
+    Успешная отправка сообщения в чат с соперником
+  status: pass
+
+- summary: | # show
+    Успешно просмотреть ход идущего баттла других игроков
+  status: pass
+
+- summary: | Sorry! This content for Premium Subscribers only. # show
+    Успешно просмотреть запись своего завершенного баттла из интерфейса баттла
+  status: fail
+
+- summary: | Sorry! This content for Premium Subscribers only. # show
+    Успешно просмотреть запись завершенного баттла других игроков
+  status: fail
+
+- summary: | Sorry! This content for Premium Subscribers only. # show
+    Просмотр записи завершенных турниров
+  status: fail
+
+- summary: | Sorry! This content for Premium Subscribers only. # show
+    Проверка работы проигрывателя записи баттла
+  status: fail
+
+- summary: | грустный смайлик # чат
+    Успешная отправка сообщения в общий чат на странице комьюнити
+  status: pass
+
+- summary: | # чат
+    Успешная отправка приватного сообщения пользователю онлайн
+  status: pass
+
+- summary: | приглашение не отменить # пользователи онлайн
+    Успешная отправка приглашения на бой пользователю онлайн
+  status: fail
+
+- summary: | # пользователи онлайн
+    Просмотр информации о пользователе в онлайн
+  status: pass
+
+- summary: | # users rating
+    Проверка отображения рейтинга на странице комьюнити
+  status: pass
+
+- summary: | надо проверить # users rating
+    Успешный поиск пользователя в Users rating
+  status: pass
+
+- summary: | # tournaments
+    Успешно зарегистрироваться на турнир
+  status: pass
+
+- summary: | создатель John Doe и степ2 прокрутка на примерах и ошибка 500 и нельзя потестить# tournaments
+    Успешно создать новый турнир
+  status: pass
+
+- summary: | # tournaments
+    Успешно отредактировать созданный турнир
+  status: pass
+
+- summary: | # tournaments
+    Успешно отменить созданный турнир
+  status: pass
+
+- summary: | # меню пользователя
+    Просмотра статистики пользователя в личном кабинете
+  status: pass
+
+- summary: | # меню пользователя
+    Изменение индивидуальных настроек
+  status: pass
+
+- summary: | # меню пользователя
+    Успешный переход по ссылкам в меню пользователя
+  status: pass
+
+- summary: | # tasks
+    Успешный просмотр заданий для турнира
+  status: pass
+
+- summary: | задание на модерации но доступно другим пользователям # tasks
+    Успешное создание нового задания для турнира
+  status: pass
+
+- summary: | # хедер
+    Проверка возможности возврата на главную страницу кликом по логотипу 
+  status: pass
+
+- summary: | # кроссбраузерность
+    Кроссбраузерность сайта
+  status: pass
+
+- summary: | # адаптивность на устройствах
+    Адаптивность сайта на смартфоне
+  status: pass
+
+- summary: | 990x858 меню пользователя # адаптивность на устройствах
+    Адаптивность сайта при изменении размера окна браузера 
+  status: fail
+
+- summary: | # безопасность
+    Проверка действующего сертификата SSL 
+  status: pass
+
+- summary: | # безопасность
+    Проверка защиты чата от XSS
+  status: pass
+
+- summary: | кнопка Run в баттле title="Check solution&#013;Ctrl + Enter" # интерфейс кнопки
+    Проверка отображения и поведение кнопок
+  status: pass
+
+- summary: | # мультиязычность
+    Проверка отображения элементов сайта при смене языка
+  status: pass
