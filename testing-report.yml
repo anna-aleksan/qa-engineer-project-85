@@ -3,7 +3,7 @@
     Успешная регистрация нового пользователя на сайте с помощью E-mail
   status: pass
 
-- summary: | после сброса пароля нет кнопки на главную страницу для продолжения https://codebattle.hexlet.io/ # sing up
+- summary: | # sing up
     Успешный сброс пароля с помощью E-mail
   status: pass
 
@@ -23,11 +23,11 @@
     Успешный вход в систему зарегистрированного пользователя
   status: pass
 
-- summary: | не соблюдаются условия# create a game
+- summary: | # create a game
     Успешное создание новой игры с другими пользователями
   status: fail
 
-- summary: | не соблюдаются условия# create a game
+- summary: | # create a game
     Успешное создание новой игры с ботом
   status: fail
 
@@ -43,67 +43,67 @@
     Успешно принять участие в баттле из списка активных баттлов
   status: pass
 
-- summary: | # игра с другом create a game
+- summary: | # create a game with a friend
     Успешное создание новой игры с другом
   status: pass
 
-- summary: | кнопка не работает Cancel # игра с другом create a game
+- summary: | # create a game with a friend
     Успешно отменить баттл с другом
   status: fail
 
-- summary: | # игра с другом create a game
+- summary: | # create a game with a friend
     Успешно отправить ссылку на баттл другу
   status: pass
 
-- summary: | не работает Assept Decline # игра с другом fight
-    Успешно отправить ссылку на баттл другу
+- summary: | # fight with a friend
+    Успешно принять участие в баттле по приглашению от друга
   status: fail
 
-- summary: | # игра с другом fight
+- summary: | # fight with a friend
     Успешно принять участие в баттле по ссылке от друга
   status: pass
 
-- summary: | # процесс баттла
+- summary: | # play battle
     Успешно завершить баттл решив задачу быстрее соперника
   status: pass
 
-- summary: | # процесс баттла
+- summary: | # play battle
     Успешно проверить написание кода на решение задачи
   status: pass
 
-- summary: | # процесс баттла
+- summary: | # play battle
     Успешно сыграть реванш с тем же соперником
   status: pass
 
-- summary: | # процесс баттла
+- summary: | # play battle
     Успешно сдаться во время баттла
   status: pass
 
-- summary: | # процесс баттла
+- summary: | # play battle
     Успешно сменить отображение текста задания на другой язык
   status: pass
 
-- summary: | # процесс баттла
+- summary: | # play battle
     Успешно поменять язык программирования во время баттла
   status: pass
 
-- summary: | # процесс баттла
+- summary: | # play battle
     Успешно сбросить код до исходного состояния
   status: pass
 
-- summary: | # процесс баттла
+- summary: | # play battle
     Успешный переход в редактор кода Vim
   status: pass
 
-- summary: | # процесс баттла
+- summary: | # play battle
     Смена темы оформления Dark/Light
   status: pass
 
-- summary: | # процесс баттла
+- summary: | # play battle
     Успешный вызов обучающих подсказок
   status: pass
 
-- summary: | # процесс баттла
+- summary: | # play battle
     Успешная отправка сообщения в чат с соперником
   status: pass
 
@@ -111,35 +111,35 @@
     Успешно просмотреть ход идущего баттла других игроков
   status: pass
 
-- summary: | Sorry! This content for Premium Subscribers only. # show
+- summary: | # show Sorry! This content for Premium Subscribers only. 
     Успешно просмотреть запись своего завершенного баттла из интерфейса баттла
   status: fail
 
-- summary: | Sorry! This content for Premium Subscribers only. # show
+- summary: | # show Sorry! This content for Premium Subscribers only.
     Успешно просмотреть запись завершенного баттла других игроков
   status: fail
 
-- summary: | Sorry! This content for Premium Subscribers only. # show
+- summary: | # show Sorry! This content for Premium Subscribers only.
     Просмотр записи завершенных турниров
   status: fail
 
-- summary: | Sorry! This content for Premium Subscribers only. # show
+- summary: | # show Sorry! This content for Premium Subscribers only.
     Проверка работы проигрывателя записи баттла
   status: fail
 
-- summary: | грустный смайлик # чат
+- summary: | # chat
     Успешная отправка сообщения в общий чат на странице комьюнити
   status: pass
 
-- summary: | # чат
+- summary: | # chat
     Успешная отправка приватного сообщения пользователю онлайн
   status: pass
 
-- summary: | приглашение не отменить # пользователи онлайн
+- summary: | # user is online
     Успешная отправка приглашения на бой пользователю онлайн
-  status: fail
+  status: pass
 
-- summary: | # пользователи онлайн
+- summary: | # user is online
     Просмотр информации о пользователе в онлайн
   status: pass
 
@@ -147,7 +147,7 @@
     Проверка отображения рейтинга на странице комьюнити
   status: pass
 
-- summary: | надо проверить # users rating
+- summary: | # users rating
     Успешный поиск пользователя в Users rating
   status: pass
 
@@ -155,7 +155,7 @@
     Успешно зарегистрироваться на турнир
   status: pass
 
-- summary: | создатель John Doe и степ2 прокрутка на примерах и ошибка 500 и нельзя потестить# tournaments
+- summary: | # tournaments
     Успешно создать новый турнир
   status: pass
 
@@ -167,15 +167,15 @@
     Успешно отменить созданный турнир
   status: pass
 
-- summary: | # меню пользователя
+- summary: | # user menu
     Просмотра статистики пользователя в личном кабинете
   status: pass
 
-- summary: | # меню пользователя
+- summary: | # user menu
     Изменение индивидуальных настроек
   status: pass
 
-- summary: | # меню пользователя
+- summary: | # user menu
     Успешный переход по ссылкам в меню пользователя
   status: pass
 
@@ -183,38 +183,38 @@
     Успешный просмотр заданий для турнира
   status: pass
 
-- summary: | задание на модерации но доступно другим пользователям # tasks
+- summary: | # tasks
     Успешное создание нового задания для турнира
-  status: pass
+  status: fail
 
-- summary: | # хедер
+- summary: | # logo
     Проверка возможности возврата на главную страницу кликом по логотипу 
   status: pass
 
-- summary: | # кроссбраузерность
+- summary: | # cross browser
     Кроссбраузерность сайта
   status: pass
 
-- summary: | # адаптивность на устройствах
+- summary: | # responsiveness on devices
     Адаптивность сайта на смартфоне
   status: pass
 
-- summary: | 990x858 меню пользователя # адаптивность на устройствах
+- summary: | # responsiveness on devices
     Адаптивность сайта при изменении размера окна браузера 
   status: fail
 
-- summary: | # безопасность
+- summary: | # security
     Проверка действующего сертификата SSL 
   status: pass
 
-- summary: | # безопасность
+- summary: | # security
     Проверка защиты чата от XSS
   status: pass
 
-- summary: | кнопка Run в баттле title="Check solution&#013;Ctrl + Enter" # интерфейс кнопки
+- summary: | # interface
     Проверка отображения и поведение кнопок
-  status: pass
+  status: fail
 
-- summary: | # мультиязычность
+- summary: | # multi-language
     Проверка отображения элементов сайта при смене языка
   status: pass
