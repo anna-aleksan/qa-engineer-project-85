@@ -956,7 +956,7 @@
     За победы и участие пользователи получают очки, формируется общий рейтинг
   prerequisites: |
     Пользователь авторизован
-    Открыта страница https://codebattle.hexlet.io/#lobby
+    Открыта страница https://codebattle.hexlet.io/users
   test-data: |
     Users = annaalexsan
     Rank = 199
@@ -964,29 +964,30 @@
     Games_played = 10
     Joined at = December 15, 2023
   steps:
-    Search = no data
-    Rating = weekly
-    Pages = 20
-    With bots = no
-    Filters = Rank
-	  ---
-    Search = no data
-    Rating = monthly
-    Pages = 40
-    With bots = yes
-    Filters = Joined
-	  ---
-    Search = no data
-    Rating = monthly
-    Pages = 30
-    With bots = no
-    Filters = Games played
-	  ---
-    Search = 'anna'
-    Rating = total
-    Pages = 50
-    With bots = no
-    Filters = Rating
+    - Применить следующие параметры поиска  
+      Search = no data
+      Rating = weekly
+      Pages = 20
+      With bots = no
+      Filters = Rank
+	    ---
+      Search = no data
+      Rating = monthly
+      Pages = 40
+      With bots = yes
+      Filters = Joined
+	    ---
+      Search = no data
+      Rating = monthly
+      Pages = 30
+      With bots = no
+      Filters = Games played
+	    ---
+      Search = 'anna'
+      Rating = total
+      Pages = 50
+      With bots = no
+      Filters = Rating
   expected-result: |
     Список пользователь корректно фильтруется по всем столбцам
     Поиск показывает релевантные результаты
