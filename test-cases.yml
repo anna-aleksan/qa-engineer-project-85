@@ -966,27 +966,27 @@
   steps:
     Search = no data
     Rating = weekly
-    Pages =	20
-    With bots =	no
-    Filters =	Rank
+    Pages = 20
+    With bots = no
+    Filters = Rank
 	  ---
     Search = no data
     Rating = monthly
-    Pages =	40
-    With bots =	yes
-    Filters =	Joined
+    Pages = 40
+    With bots = yes
+    Filters = Joined
 	  ---
     Search = no data
     Rating = monthly
-    Pages =	30
-    With bots =	no
-    Filters =	Games played
+    Pages = 30
+    With bots = no
+    Filters = Games played
 	  ---
     Search = 'anna'
     Rating = total
-    Pages =	50
-    With bots =	no
-    Filters =	Rating
+    Pages = 50
+    With bots = no
+    Filters = Rating
   expected-result: |
     Список пользователь корректно фильтруется по всем столбцам
     Поиск показывает релевантные результаты
