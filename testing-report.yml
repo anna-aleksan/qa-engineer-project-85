@@ -111,19 +111,19 @@
     Успешно просмотреть ход идущего баттла других игроков
   status: pass
 
-- summary: | # show Sorry! This content for Premium Subscribers only. 
+- summary: | # show Sorry! This content for Premium Subscribers only. #1623 
     Успешно просмотреть запись своего завершенного баттла из интерфейса баттла
   status: fail
 
-- summary: | # show Sorry! This content for Premium Subscribers only.
+- summary: | # show Sorry! This content for Premium Subscribers only. #1623
     Успешно просмотреть запись завершенного баттла других игроков
   status: fail
 
-- summary: | # show Sorry! This content for Premium Subscribers only.
+- summary: | # show Sorry! This content for Premium Subscribers only. #1623
     Просмотр записи завершенных турниров
   status: fail
 
-- summary: | # show Sorry! This content for Premium Subscribers only.
+- summary: | # show Sorry! This content for Premium Subscribers only. #1623
     Проверка работы проигрывателя записи баттла
   status: fail
 
