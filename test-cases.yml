@@ -963,6 +963,7 @@
     Elo_rating = 1200
     Games_played = 10
     Joined at = December 15, 2023
+
   steps:
     - Применить следующие параметры поиска 
       Search = no data
@@ -970,20 +971,17 @@
       Pages = 20
       With bots = no
       Filters = Rank
-	    ----
-      Search = no data
+    - Search = no data
       Rating = monthly
       Pages = 40
       With bots = yes
       Filters = Joined
-	    ----
-      Search = no data
+    - Search = no data
       Rating = monthly
       Pages = 30
       With bots = no
       Filters = Games played
-	    ----
-      Search = 'anna'
+    - Search = 'anna'
       Rating = total
       Pages = 50
       With bots = no
