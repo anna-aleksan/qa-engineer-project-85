@@ -8,11 +8,19 @@
   status: pass
 
 - summary: | # sing up
-    Успешная регистрация нового пользователя на сайте с помощью GitHub, Discord
+    Успешная регистрация нового пользователя на сайте с помощью GitHub
+  status: pass
+
+- summary: | # sing up
+    Успешная регистрация нового пользователя на сайте с помощью Discord
   status: pass
 
 - summary: | # sing in
-    Успешно добавить интеграцию с GitHub, Discord после регистрации по E-mail
+    Успешно добавить интеграцию с GitHub после регистрации по E-mail
+  status: pass
+
+- summary: | # sing in
+    Успешно добавить интеграцию с Discord после регистрации по E-mail
   status: pass
 
 - summary: | # sing in
