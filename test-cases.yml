@@ -6,9 +6,9 @@
   prerequisites: |
     Открыта страница https://codebattle.hexlet.io/
   test-data: |
-    Nickname = test
-    Email = test@mail.ru
-    Password = 111111
+    Nickname = your data
+    Email = your data
+    Password = your data
   steps:
     - Нажать Sing up
     - Ввод
@@ -28,14 +28,14 @@
   prerequisites: |
     Открыта страница https://codebattle.hexlet.io/
   test-data: |
-    Nickname = test
-    Email = test@mail.ru
-    Password = 111111
+    Nickname = your data
+    Email = your data
+    Password = your data
   steps:
     - Нажать Sing in
     - Нажать 'Forgot your password?'
     - Ввод E-mail
-    - Надать Submit
+    - Нажать Submit
     - Перейти по ссылке из входящего письма от noreply@codebattle
     - Ввод новый пароль
     - Нажать Save
@@ -46,21 +46,35 @@
     Старый пароль не работает
 
 - summary: | # sing up
-    Успешная регистрация нового пользователя на сайте с помощью GitHub, Discord
+    Успешная регистрация нового пользователя на сайте с помощью GitHub
   requirement: |
     Пользователь имеет возможность регистрации в системе с помощью E-mail, GitHub, Discord
   prerequisites: |
+    Пользователь имеет аккаунт в GitHub
     Открыта страница https://codebattle.hexlet.io/
   test-data: |
     GitHub = your data
-    Discord = your data
   steps:
     - Нажать Sing in
     - Нажать Sing in with Github
     - Авторизироваться через GitHub
     - Открыть https://github.com/settings/applications
     - Вкладка Authorized OAuth Apps
-      ---
+  expected-result: |
+    После завершения регистрации открывается страница комьюнити
+    На странице отображаются данные пользователя - никнейм Github
+    Аккаунт GitHub интегрирован с Codebattle
+
+- summary: | # sing up
+    Успешная регистрация нового пользователя на сайте с помощью Discord
+  requirement: |
+    Пользователь имеет возможность регистрации в системе с помощью E-mail, GitHub, Discord
+  prerequisites: |
+    Пользователь имеет аккаунт в Discord
+    Открыта страница https://codebattle.hexlet.io/    
+  test-data: |
+    Discord = your data
+  steps:
     - Нажать Sing in
     - Нажать Sing in with Discord
     - Авторизироваться через Discord
@@ -69,19 +83,19 @@
     - Перейти в Authorized applications
   expected-result: |
     После завершения регистрации открывается страница комьюнити
-    На странице отображаются данные пользователя - никнейм Github или Discord
-    Аккаунты GitHub, Discord интегрированы с Codebattle
+    На странице отображаются данные пользователя - никнейм Discord
+    Аккаунт Discord интегрирован с Codebattle
 
 - summary: | # sing in
-    Успешно добавить интеграцию с GitHub, Discord после регистрации по E-mail
+    Успешно добавить интеграцию с GitHub после регистрации по E-mail
   requirement: |
     Пользователь имеет возможность регистрации в системе с помощью E-mail, GitHub, Discord
   prerequisites: |
     Пользователь авторизован по E-mail
+    Пользователь имеет аккаунт в GitHub
     Открыта страница https://codebattle.hexlet.io/#lobby
   test-data: |
     GitHub = your data
-    Discord = your data
   steps:
     - Меню пользователя
     - Перейти в Settings
@@ -90,7 +104,20 @@
     - Выйти нажать Sing Out
     - Нажать Sing in
     - Выбрать Sing in with Github
-      ---
+  expected-result: |
+    Аккаунт GitHub интегрирован с Codebattle
+
+- summary: | # sing in
+    Успешно добавить интеграцию с Discord после регистрации по E-mail
+  requirement: |
+    Пользователь имеет возможность регистрации в системе с помощью E-mail, GitHub, Discord
+  prerequisites: |
+    Пользователь авторизован по E-mail
+    Пользователь имеет аккаунт в Discord
+    Открыта страница https://codebattle.hexlet.io/#lobby
+  test-data: |
+    Discord = your data
+  steps:
     - Меню пользователя
     - Перейти в Settings
     - Нажать Link Discord
@@ -99,7 +126,7 @@
     - Нажать Sing in
     - Выбрать Sing in with Discord
   expected-result: |
-    Аккаунты GitHub, Discord интегрированы с Codebattle
+    Аккаунт Discord интегрирован с Codebattle
 
 - summary: | # sing in
     Успешно удалить интеграцию с GitHub, Discord
@@ -130,9 +157,9 @@
     Пользователь зарегистрирован в системе
     Открыта страница https://codebattle.hexlet.io/
   test-data: |
-    Nickname = test
-    Email = test@mail.ru
-    Password = 111111
+    Nickname = your data
+    Email = your data
+    Password = your data
   steps:
     - Нажать Sign In
     - Авторизироваться с помощью E-mail
@@ -156,29 +183,29 @@
     Choose task by name or tags =	random task
     Tags =	rest
     ---
+    Level = 2
+    Game Type =	With other users
+    Time control = 15
+    Choose task by name or tags = random task
+    Tags = hash-maps
+    ---
+    Level = 3
+    Game Type = With other users
+    Time control = 40
+    Choose task by name or tags =	random task
+    Tags = math
+    ---
+    Level = 1
+    Game Type =	With other users
+    Time control = 5
+    Choose task by name or tags =	random task
+    Tags = collection
+    ---
     Level =	2
     Game Type =	With other users
-    Time control =	15
+    Time control = 20
     Choose task by name or tags =	random task
-    Tags =	hash-maps
-    ---
-    Level =	3
-    Game Type =	With other users
-    Time control =	40
-    Choose task by name or tags =	random task
-    Tags =	math
-    ---
-    Level =	1
-    Game Type =	With other users
-    Time control =	5
-    Choose task by name or tags =	random task
-    Tags =	collection
-    ---
-    Level =	2
-    Game Type =	With other users
-    Time control =	20
-    Choose task by name or tags =	random task
-    Tags =	math
+    Tags = math
   steps:
     - Нажать CREATE A GAME
     - Выставить настройки
@@ -198,33 +225,33 @@
     New battle settings:
     Level =	4
     Game Type =	With a bot
-    Time control =	50
+    Time control = 50
     Choose task by name or tags =	random task
-    Tags =	rest
+    Tags = rest
     ---
     Level =	1
     Game Type =	With a bot
-    Time control =	3
+    Time control = 3
     Choose task by name or tags =	random task
-    Tags =	hash-maps
+    Tags = hash-maps
     ---
     Level =	2
     Game Type =	With a bot
-    Time control =	30
+    Time control = 30
     Choose task by name or tags =	random task
-    Tags =	strings
+    Tags = strings
     ---
     Level =	4
     Game Type =	With a bot
-    Time control =	60
+    Time control = 60
     Choose task by name or tags =	random task
-    Tags =	collection
+    Tags = collection
     ---
     Level =	3
     Game Type =	With a bot
-    Time control =	25
+    Time control = 25
     Choose task by name or tags =	random task
-    Tags =	strings
+    Tags = strings
   steps:
     - Нажать CREATE A GAME
     - Выставить настройки
@@ -317,9 +344,10 @@
     - Выставить настройки
     - Нажать Create battle
     - Нажать на иконку 'invites' в шапке сайта
+    - Дождаться подтверждения приглашения другом
   expected-result: |
     Отображается уведомление об отправленном приглашении и кому
-    В ожидании подтверждения друга
+    После подтверждения приглашения другом, открывается интерфейс баттла - можно играть с другом
 
 - summary: | # create a game with a friend
     Успешно отменить баттл с другом
@@ -418,7 +446,7 @@
 - summary: | # play battle
     Успешно завершить баттл решив задачу быстрее соперника
   requirement: |
-    Победа присуждается игроку который верно выполнил условия задачи за меньшее время
+    Победа присуждается игроку, который верно выполнил условия задачи за меньшее время
   prerequisites: |
     Пользователь прошел авторизацию
     Открыта страница https://codebattle.hexlet.io/#lobby
@@ -482,12 +510,11 @@
     - Нажать Create battle
     - Очистить окно редактора кода
     - Нажать на иконку Run
-    - В редакторе кода ввести верное решение
+    - Ввод верное решение
     - Нажать на иконку Run
   expected-result: |
-    На условие игры не влияет
-    На ход игры не влияет
-    Попытки не ограничены
+    Нажав на Run при неверном решении - сообщение Test failed, игра продолжается
+    Нажав на Run при верном решении - завершение баттла и сообщение о победе
 
 - summary: | # play battle
     Успешно сыграть реванш с тем же соперником
@@ -516,7 +543,7 @@
     - Нажать CREATE A GAME
     - Выставить настройки
     - Нажать Create battle
-    - Решить задачу
+    - Ввод верное решение
     - В модальном окне нажать Thanks
     - Нажать Rematch
     - Дождаться подтверждения соперника
@@ -666,14 +693,14 @@
     - Выставить настройки
     - Нажать Create battle
     - В редакторе кода нажать на иконку Vim
-    - Ввести
+    - Ввод
       (esc):%s/0/width * length/g
       Enter
     - Нажать на иконку Run
     - В модальном окне нажать Thanks
   expected-result: |
     Редактор Vim работает корректно
-    Из редактора легко выйти
+    Возможность сменить режим редактора Vim на стандартный режим
   
 - summary: | # play battle
     Смена темы оформления Dark/Light
@@ -1200,13 +1227,15 @@
   requirement: |
     Сайт должен быть протестирован на совместимость с последними версиями браузеров
   prerequisites: |
-    Открыта страница https://codebattle.hexlet.io/#lobby
+    Открыта страница https://codebattle.hexlet.io/
   test-data: |
     Браузер = Firefox 119.0.1 (64-разрядный)
     Браузер = Google Chrome Версия 119.0.6045.124 (Официальная сборка), (64 бит)
+    Браузер = Safari Version 16.5.1 (18615.2.9.11.7)
   steps:
-    - Открыть в Firefox https://hexlet-products-store.vercel.app/
-    - Открыть в Chrome https://hexlet-products-store.vercel.app/
+    - Открыть в Firefox https://codebattle.hexlet.io/
+    - Открыть в Chrome https://codebattle.hexlet.io/
+    - Открыть в Safari https://codebattle.hexlet.io/
     - Сравнить отображение шрифтов
       Страница главная
       Sing in
